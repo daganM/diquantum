@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
+#SSL DEACTIVATED FOR DEVELOPMENT BUG. PLEASE USE IN AGAIN IN PROD
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
