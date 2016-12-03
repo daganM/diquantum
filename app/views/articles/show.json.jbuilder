@@ -1,1 +1,1 @@
-json.extract! @article, :id, :title, :content, :audio, :author, :created_at, :updated_at
+json.partial! "articles/article", article: @article

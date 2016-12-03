@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @introduction.text %>
+</p>
+
+<p>
+  <strong>Notion:</strong>
+  <%= @introduction.notion_id %>
+</p>
+
+<%= link_to 'Edit', edit_introduction_path(@introduction) %> |
+<%= link_to 'Back', introductions_path %>

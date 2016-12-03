@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<% breadcrumb :article, @article %>
+
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -8,16 +8,6 @@
 <p>
   <strong>Content:</strong>
   <%= @article.content %>
-</p>
-
-<p>
-  <strong>Audio:</strong>
-  <%= @article.audio %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @article.author %>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |

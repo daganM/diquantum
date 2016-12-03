@@ -1,4 +1,1 @@
-json.array!(@articles) do |article|
-  json.extract! article, :id, :title, :content, :audio, :author
-  json.url article_url(article, format: :json)
-end
+json.array! @articles, partial: 'articles/article', as: :article
