@@ -8,6 +8,8 @@
   <strong>Introduction : </strong>
   <%= @notion.introduction %>
 </p>
-
+<% @notion.articles.each do |article| %>
+ Article : <%= article.title %>
+<% end %>
 <%= link_to 'Edit', edit_notion_path(@notion) %> |
 <%= link_to 'Back', notions_path %>

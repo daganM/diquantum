@@ -11,5 +11,5 @@
 
 class Notion < ActiveRecord::Base
   has_one :introduction
-  has_and_belongs_to_many :notions
+  has_and_belongs_to_many :articles
 end
