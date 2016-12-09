@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @notion.title.capitalize %></h1>
 <p>
-  <strong>Title:</strong>
-  <%= @notion.title %>
-</p>
-<p>
-  <strong>Introduction : </strong>
   <%= @notion.introduction %>
 </p>
+<h2>Articles</h2>
 <% @notion.articles.each do |article| %>
- Article : <%= article.title %>
+  <article>
+    <h3><%= link_to article.title, article_path(article) %></h3>
+    <%= article.content %>
+  </article>
 <% end %>
 <%= link_to 'Edit', edit_notion_path(@notion) %> |
 <%= link_to 'Back', notions_path %>
