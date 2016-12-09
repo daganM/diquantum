@@ -11,4 +11,8 @@
 
 class Introduction < ActiveRecord::Base
   belongs_to :notion
+
+  def to_s
+    "#{text}"
+  end
 end
