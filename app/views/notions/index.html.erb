@@ -1,6 +1,7 @@
+<% content_for :title, "Liste des 100 notions" %>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Notions</h1>
+<h1>Liste des 100 notions</h1>
 
 <table>
   <thead>
@@ -15,8 +16,6 @@
       <tr>
         <td><%= notion.title %></td>
         <td><%= link_to 'Show', notion %></td>
-        <td><%= link_to 'Edit', edit_notion_path(notion) %></td>
-        <td><%= link_to 'Destroy', notion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
