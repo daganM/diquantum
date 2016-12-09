@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161203134330) do
+ActiveRecord::Schema.define(version: 20161209134301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 20161203134330) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "articles_notions", force: :cascade do |t|
+    t.integer "notion_id"
+    t.integer "article_id"
   end
 
   create_table "introductions", force: :cascade do |t|
@@ -44,4 +49,6 @@ ActiveRecord::Schema.define(version: 20161203134330) do
     t.integer  "article_id"
   end
 
+  add_foreign_key "articles_notions", "articles"
+  add_foreign_key "articles_notions", "notions"
 end
