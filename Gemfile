@@ -29,7 +29,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'annotate'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'seed_dump'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
