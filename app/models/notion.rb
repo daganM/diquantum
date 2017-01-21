@@ -12,4 +12,8 @@
 class Notion < ActiveRecord::Base
   has_one :introduction
   has_and_belongs_to_many :articles
+
+  def to_s
+    title
+  end
 end

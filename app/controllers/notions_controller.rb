@@ -10,6 +10,7 @@ class NotionsController < ApplicationController
   # GET /notions/1
   # GET /notions/1.json
   def show
+    @notions = Notion.all
   end
 
   # GET /notions/new

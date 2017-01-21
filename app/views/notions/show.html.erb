@@ -6,11 +6,23 @@
   <%= @notion.introduction %>
 </p>
 <h2>Articles</h2>
-<% @notion.articles.each do |article| %>
-  <article>
-    <h3><%= link_to article.title, article_path(article) %></h3>
-    <%= article.content %>
-  </article>
-<% end %>
+<div id="filters">
+  <p>Filtrer :</p>
+  <div class="filters">
+    <% @notions.each do |notion| %>
+      <div class="button-group" data-filter-group="<%= notion %>">
+        <button class="button" data-filter="<%= notion %>"><%= notion %></button>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="grid">
+  <% @notion.articles.each do |article| %>
+    <article class="filter-element <% article.notions.each do |notion| %><%= notion %> <% end %>">
+      <h3><%= link_to article.title, article_path(article) %></h3>
+      <%= article.content %>
+    </article>
+  <% end %>
+</div>
 <%= link_to 'Edit', edit_notion_path(@notion) %> |
 <%= link_to 'Back', notions_path %>
