@@ -10,6 +10,17 @@ class NotionsController < ApplicationController
   # GET /notions/1
   # GET /notions/1.json
   def show
+    if params[:notions].nil? || params[:notions].empty?
+      @array = []
+    else
+      @array = params[:notions].split(",")
+    end
+    if defined?(params[:entrance])
+      @array << params[:entrance]
+    end
+    # if defined?(params[:out])
+    #   @array - params[:out]
+    # end
     @notions = Notion.all
   end
 

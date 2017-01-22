@@ -11,7 +11,7 @@
   <div class="filters">
     <% @notions.each do |notion| %>
       <div class="button-group" data-filter-group="<%= notion %>">
-        <button class="button" data-filter="<%= notion %>"><%= notion %></button>
+        <a class="button" data-filter="<%= notion %>" href="?notions=<%= @array.join(",") %>&amp;entrance=<%= notion %>"><%= notion %></button>
       </div>
     <% end %>
   </div>
