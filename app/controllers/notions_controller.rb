@@ -23,14 +23,21 @@ class NotionsController < ApplicationController
     # end
     @notions = Notion.all
     @Notionfilter = []
-    @Notionfilter << @array
-    @Notionfilter << @notion
-    @notionIds = []
-    @Notionfilter.each do |n|
-      @notionFind = Notion.where(:title => n).first
-      @notionIds << @notionFind.id
+    @array.each do |a|
+      @Notionfilter << a
     end
+    @Notionfilter << @notion.title
+    @notionIds = []
 
+    @Notionfilter.each do |n|
+      if n
+        @notionFind = Notion.where(:title => n).first
+        if @notionFind
+          @notionFindId = @notionFind.id
+          @notionIds << @notionFind.id
+        end
+      end
+    end
   end
 
   # GET /notions/new

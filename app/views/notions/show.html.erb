@@ -8,6 +8,7 @@
 <h2>Articles</h2>
 <div id="filters">
   <p>Filtrer :</p>
+  <%=  @notionIds.inspect %>
   <div class="filters">
     <% @notions.each do |notion| %>
       <div class="button-group" data-filter-group="<%= notion %>">
