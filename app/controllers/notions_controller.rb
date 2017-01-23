@@ -38,6 +38,38 @@ class NotionsController < ApplicationController
         end
       end
     end
+    @articles = Article.all
+    @articlesFinals = []
+    @articles.each do |article|
+      notions = article.notions
+      notionsId = []
+      notions.each do |notion|
+        notionsId << notion.id
+      end
+
+      notions = notions.sort
+      @notionIds = @notionIds.sort
+      testBeta = false
+      isPresent = false
+      @notionIds.each do |nFilterId|
+        notionsId.each do |nArticleId|
+          if nArticleId == nFilterId
+            isPresent = true
+          end
+        end
+        #si is present = true alors
+        #on a un filtre trouver dans un article
+
+        if isPresent != true
+          testBeta = false
+        end
+      end
+      if testBeta == true
+        @articlesFinals << article
+      end
+    end
+
+
   end
 
   # GET /notions/new
