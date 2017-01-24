@@ -17,10 +17,29 @@
 @import "bootstrap";
 body{
   font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
-  #principal
-  {
-    margin-top: 50px;
+  .nav-perso{
+      background-color: white;
   }
+    .nav-perso .navbar-brand img{
+      height: 26px;
+      width: 131px;
+    }
+  .collapse-perso .nav img{
+    height: 20px;
+    width: 20px;
+  }
+    .collapse-perso .navbar-form{
+      margin-top: 10px;
+      text-align: center;
+    }
+      .collapse-perso .navbar-form input{
+        background-color: #e3e3e3;
+        color: black;
+        height: 30px;
+      }
+      .collapse-perso .navbar-form button{
+        height: 30px;
+      }
 }
 
 .button-group{
