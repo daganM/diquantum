@@ -15,7 +15,11 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
-
+  <div class="field">
+    <% @notions.each do |notion| %>
+      <%= check_box_tag "notions[]", notion.id %><%= notion %>
+    <% end %>
+  </div>
   <%= f.cktext_area :content, ckeditor: { language: 'fr'} %>
   <div class="actions">
     <%= f.submit %>
