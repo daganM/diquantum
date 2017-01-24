@@ -16,6 +16,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 body{
+  background-color: #f0f0f0;
   font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
   .nav-perso{
       background-color: white;
@@ -31,6 +32,7 @@ body{
     .collapse-perso .navbar-form{
       margin-top: 10px;
       text-align: center;
+      width: 65%;
     }
       .collapse-perso .navbar-form input{
         background-color: #e3e3e3;
