@@ -8,20 +8,23 @@
 <h2>Articles</h2>
 <div id="filters">
   <p>Filtrer :</p>
-  <%= @notionIds.sort.inspect %>
-  <%= @articlesFinals.inspect %>
-  <%=  debug @articlesFinals %>
 
   <div class="filters">
     <% @notions.each do |notion| %>
-      <div class="button-group" data-filter-group="<%= notion %>">
-        <a class="button" data-filter="<%= notion %>" href="?notions=<%= @array.join(",") %>&amp;entrance=<%= notion %>"><%= notion %></button>
-      </div>
+      <% if @notionIds.include?(notion.id) == false %>
+        <% if notion.id != @id %>
+          <a class="button" data-filter="<%= notion %>" href="?notions=<%= @array.join(",") %>&amp;entrance=<%= notion %>"><%= notion %></a>
+        <% end %>
+      <% else %>
+        <% if notion.id != @id %>
+          <a class="button" data-filter="<%= notion %>" href="?notions=<%= @array.join(",") %>&amp;out=<%= notion %>"><%= notion %></a>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
 <div class="grid">
-  <% @notion.articles.each do |article| %>
+  <% @articlesFinals.each do |article| %>
     <article class="filter-element <% article.notions.each do |notion| %><%= notion %> <% end %>">
       <h3><%= link_to article.title, article_path(article) %></h3>
       <%= article.content %>

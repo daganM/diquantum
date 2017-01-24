@@ -10,6 +10,7 @@ class NotionsController < ApplicationController
   # GET /notions/1
   # GET /notions/1.json
   def show
+    @id = params[:id]
     if params[:notions].nil? || params[:notions].empty?
       @array = []
     else
@@ -18,9 +19,9 @@ class NotionsController < ApplicationController
     if defined?(params[:entrance])
       @array << params[:entrance]
     end
-    # if defined?(params[:out])
-    #   @array - params[:out]
-    # end
+    if defined?(params[:out])
+      @array.delete(params[:out])
+    end
     @notions = Notion.all
     @Notionfilter = []
     @array.each do |a|
@@ -49,18 +50,22 @@ class NotionsController < ApplicationController
 
       notions = notions.sort
       @notionIds = @notionIds.sort
-      testBeta = false
-      isPresent = false
+      testBeta = true
+      logger.debug "Init testBeta: #{testBeta}"
+      # logger.debug "Init isPresent: #{isPresent}"
+      logger.debug "notionsId = #{notions}"
       @notionIds.each do |nFilterId|
-        notionsId.each do |nArticleId|
-          if nArticleId == nFilterId
+        isPresent = false
+        logger.debug "nFilterId : #{nFilterId}"
+        logger.debug "include? : #{notionsId.include?(nFilterId)}"
+          if notionsId.include?(nFilterId)
             isPresent = true
+            logger.debug "isPresent for #{nFilterId} : #{isPresent}"
           end
-        end
         #si is present = true alors
         #on a un filtre trouver dans un article
 
-        if isPresent != true
+        if isPresent == false
           testBeta = false
         end
       end
