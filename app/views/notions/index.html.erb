@@ -1,12 +1,12 @@
 <% content_for :title, "Liste des 100 notions" %>
-<p id="notice"><%= notice %></p>
+
 <div class="notions">
 <h1>Notions</h1>
-    <ul><% @notions.each do |notion| %>
-
-        <li><%= link_to notion.title, notion %></li>
-
-    <% end %>
-    </ul>
+    <div class="row center-block">
+      <% @notions.each do |notion| %>
+        <div class="col-sm-3 col-xs-12 center-block"><%= link_to notion.title, notion, :class => "col-xs-6 col-sm-12 center-block" %></div>
+      <% end %>
+    </div>
+    <p id="notice"><%= notice %></p>
+    <%= link_to 'New Notion', new_notion_path %>
 </div>
-<%= link_to 'New Notion', new_notion_path %>

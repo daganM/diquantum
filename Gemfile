@@ -30,6 +30,7 @@ gem 'annotate'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'seed_dump'
+gem 'ckeditor'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

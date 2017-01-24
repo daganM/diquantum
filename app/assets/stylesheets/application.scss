@@ -20,6 +20,7 @@ body{
   font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
   .nav-perso{
       background-color: white;
+      margin-bottom: 30px;
   }
     .nav-perso .navbar-brand img{
       height: 26px;
@@ -42,28 +43,54 @@ body{
       .collapse-perso .navbar-form button{
         height: 30px;
       }
-  .container .notions {
-    background-color: white;
-  }
-    .container .notions ul{
-      column-count: 8;
-    }
-      .container .notions li {
-        text-transform: capitalize;
-        list-style-type: none;
-      }
-        .container .notions a{
-          display: inline-block;
-          margin: 0 20px 0 20px;
-          text-decoration: none;
-          width: 100px;
-          margin-bottom: 10px;
-          background: #c6b9fe;
-          color: white;
+
+  section.container{
+      .notions{
+        background-color: white;
+        h1{
+          margin-top: 0px;
         }
-}
+        .row{
+
+          div{
+            text-transform: capitalize;
+
+            a{
+              //display: inline-block;
+              text-decoration: none;
+              //width: 153px;
+              margin-bottom: 10px;
+              //padding-left: 4px;
+              border: 1px solid #1812d6;
+              color: #1812d6;
+              &:hover{
+                color: white;
+                background: #1812d6;
+              }
+            }
+          }
+        }
+      }
+    }
+    .profile{
+      background: white;
+    }
+      .profile img{
+        border-radius: 200px;
+        width: 120px;
+        height: 120px;
+        display: block;
+        border: 1px solid none;
+      }
+
+  }
 
 
 .button-group{
   display: inline;
 }
+@media (max-width: 768px) {
+ section .notions .row div{
+   left: 25%;
+  }
+ }
