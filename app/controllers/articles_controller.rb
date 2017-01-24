@@ -15,17 +15,24 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @notions = Notion.all
   end
 
   # GET /articles/1/edit
   def edit
+    @notions = Notion.all
   end
 
   # POST /articles
   # POST /articles.json
   def create
+    # notions = params[:notions]
+    notions = params[:notions]
+    notionsObj = []
+    notions.each do |notion|
+      @article.notions << Notion.find(notion)
+    end
     @article = Article.new(article_params)
-
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
@@ -40,6 +47,11 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+    notions = params[:notions]
+    notionsObj = []
+    notions.each do |notion|
+      @article.notions << Notion.find(notion)
+    end
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
