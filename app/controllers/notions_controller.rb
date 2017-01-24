@@ -51,16 +51,10 @@ class NotionsController < ApplicationController
       notions = notions.sort
       @notionIds = @notionIds.sort
       testBeta = true
-      logger.debug "Init testBeta: #{testBeta}"
-      # logger.debug "Init isPresent: #{isPresent}"
-      logger.debug "notionsId = #{notions}"
       @notionIds.each do |nFilterId|
         isPresent = false
-        logger.debug "nFilterId : #{nFilterId}"
-        logger.debug "include? : #{notionsId.include?(nFilterId)}"
           if notionsId.include?(nFilterId)
             isPresent = true
-            logger.debug "isPresent for #{nFilterId} : #{isPresent}"
           end
         #si is present = true alors
         #on a un filtre trouver dans un article
