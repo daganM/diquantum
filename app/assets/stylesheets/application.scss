@@ -32,7 +32,7 @@ body{
     .collapse-perso .navbar-form{
       margin-top: 10px;
       text-align: center;
-      width: 65%;
+      width: 55%;
     }
       .collapse-perso .navbar-form input{
         background-color: #e3e3e3;
@@ -42,7 +42,27 @@ body{
       .collapse-perso .navbar-form button{
         height: 30px;
       }
+  .container .notions {
+    background-color: white;
+  }
+    .container .notions ul{
+      column-count: 8;
+    }
+      .container .notions li {
+        text-transform: capitalize;
+        list-style-type: none;
+      }
+        .container .notions a{
+          display: inline-block;
+          margin: 0 20px 0 20px;
+          text-decoration: none;
+          width: 100px;
+          margin-bottom: 10px;
+          background: #c6b9fe;
+          color: white;
+        }
 }
+
 
 .button-group{
   display: inline;
