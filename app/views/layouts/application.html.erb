@@ -49,14 +49,22 @@
     </div>
     <div class="col-sm-2 col-xs-12 profile center-block">
       <div class="cont">
+        <% if account_signed_in? %>
         <%= image_tag("dagan.jpg", :alt => "Dagan") %>
-        <p> Name </p>
-        <ul>
-          <li><a href="#">Profil</a></li>
-          <li><a href="#">Forum</a></li>
-          <li><a href="#">Mes Favoris</a></li>
-          <li><a href="#">Paramètres</a></li>
-        <ul>
+          <ul>
+            <li><a href="#">Profil</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Mes Favoris</a></li>
+            <li><a href="#">Paramètres</a></li>
+            <li><%= link_to "Me déconnecter", destroy_account_session_path, method: :delete %></li>
+          <ul>
+        <% else %>
+        <%= image_tag("pp.png", :alt => "Profile Picture") %>
+          <ul>
+            <li><%= link_to "M'inscrire", new_account_registration_path %></li>
+            <li><%= link_to "Me connecter", new_account_session_path %></li>
+          <ul>
+        <% end %>
         </div>
       </div>
     </section>
