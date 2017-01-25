@@ -57,7 +57,7 @@ class NotionsController < ApplicationController
             isPresent = true
           end
         #si is present = true alors
-        #on a un filtre trouver dans un article
+        #on a un filtre trouvé dans un article
 
         if isPresent == false
           testBeta = false
