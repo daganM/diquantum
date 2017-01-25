@@ -28,6 +28,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'annotate'
 gem 'devise'
+gem "htmlentities"
+gem 'truncate_html', '~> 0.9.3'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'seed_dump'

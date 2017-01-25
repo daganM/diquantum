@@ -46,7 +46,7 @@ body{
       }
 
   section.container{
-      .notions{
+      .notions, #filters{
         background-color: white;
         //height: 120px;
         h1{
@@ -78,6 +78,10 @@ body{
               border: 1px solid #1812d6;
               color: #1812d6;
               &:hover{
+                color: white;
+                background: #1812d6;
+              }
+              &.active {
                 color: white;
                 background: #1812d6;
               }
