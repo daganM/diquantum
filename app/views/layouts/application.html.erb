@@ -8,6 +8,7 @@
   <script src="https://use.typekit.net/awl6wna.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <%= csrf_meta_tags %>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
 </head>
 <body>
   <nav class="navbar navbar-default nav-perso">
@@ -46,15 +47,63 @@
     <div class="col-sm-8 col-sm-offset-1 col-xs-12" id="principal">
           <%= yield %>
     </div>
-    <div class="col-sm-2 col-xs-12 profile">
-      <%= image_tag("dagan.jpg", :alt => "Dagan") %>
-      <p> Name </p>
-      <ul>
-        <li><a href="#">Profil</a></li>
-        <li><a href="#">Forum</a></li>
-        <li><a href="#">Mes Favoris</a></li>
-        <li><a href="#">Paramètres</a></li>
-      <ul>
-</section>
+    <div class="col-sm-8 col-sm-offset-1 col-xs-12 actu" >
+      <div class="actualite">
+          <H2> Actualités </h2>
+            <div class="conte">
+              <%= image_tag("avion.png", :alt => "avion") %>
+              <h3>Article 1 : Le Lorem Ipsum de votre vie</h3>
+              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit
+                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum. </p>
+              <a href="#">Lire la suite</a>
+              <br>
+              <%= image_tag("cartemere.png", :alt => "carte mère") %>
+              <h3>Article 2 : Le Lorem Ipsum de votre vie</h3>
+              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit
+                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum. </p>
+              <a href="#">Lire la suite</a>
+              <br>
+              <%= image_tag("ordi.png", :alt => "ordinateur") %>
+              <h3>Article 3 : Le Lorem Ipsum de votre vie</h3>
+              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  Duis aute irure dolor in reprehenderit in voluptate velit
+                  esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                  occaecat cupidatat non proident, sunt in culpa qui officia
+                  deserunt mollit anim id est laborum. </p>
+                <a href="#">Lire la suite</a>
+            </div>
+      </div>
+    </div>
+    <div class="col-sm-2 col-xs-12 profile center-block">
+      <div class="cont">
+        <%= image_tag("dagan.jpg", :alt => "Dagan") %>
+        <p> Name </p>
+        <ul>
+          <li><a href="#">Profil</a></li>
+          <li><a href="#">Forum</a></li>
+          <li><a href="#">Mes Favoris</a></li>
+          <li><a href="#">Paramètres</a></li>
+        <ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="coucou"></div>
+    </footer>
 </body>
 </html>

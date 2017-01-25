@@ -30,6 +30,7 @@ body{
     height: 20px;
     width: 20px;
   }
+
     .collapse-perso .navbar-form{
       margin-top: 10px;
       text-align: center;
@@ -47,20 +48,33 @@ body{
   section.container{
       .notions{
         background-color: white;
+        //height: 120px;
         h1{
           margin-top: 0px;
+          padding-top: 10px;
+          margin-left: 15px;
         }
+        a{
+          display: block;
+          img{
+            height: 30px;
+            width: 30px;
+            margin-top: 15px;
+          }
+          &:hover{
+            text-decoration: none;
+            background: none;
+          }
+        }
+
         .row{
 
           div{
             text-transform: capitalize;
 
             a{
-              //display: inline-block;
               text-decoration: none;
-              //width: 153px;
               margin-bottom: 10px;
-              //padding-left: 4px;
               border: 1px solid #1812d6;
               color: #1812d6;
               &:hover{
@@ -68,22 +82,93 @@ body{
                 background: #1812d6;
               }
             }
+
           }
         }
       }
+      .actu{
+        .actualite{
+          h2 {
+            margin-left: 15px;
+            padding-top: 10px;
+          }
+          .conte {
+            margin-left: 27px;
+            img{
+              margin-top: 20px;
+            }
+            h3{
+              margin: 0;
+              margin-top: 7px;
+           }
+            p{
+            text-align: justify;
+            width: 670px;
+            }
+            a{
+            &:hover {
+              background: none;
+              color: #1812d6;
+              text-decoration: none;
+            }
+            }
+          }
+        }
+      }
+      .profile{
+        background: white;
+        position: fixed;
+        right:0;
+        left: 58%;
+        .cont{
+          text-align: center;
+          img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+          }
+          p{
+            margin-bottom: 20px;
+          }
+          ul{
+            margin: 0;
+            padding: 0;
+            li{
+              list-style-type: none;
+              margin-bottom: 15px;
+              a{
+                text-decoration: none;
+                &:hover {
+                  color: #1812d6;
+                  background: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      .actu{
+        .actualite{
+          background: white;
+        }
+      }
     }
-    .profile{
-      background: white;
-    }
-      .profile img{
-        border-radius: 200px;
-        width: 120px;
-        height: 120px;
-        display: block;
-        border: 1px solid none;
+    footer{
+      .coucou{
+        margin-top: 5%;
+        position: relative;
+        bottom:0;
+        left:0;
+        height:70px;
+
+        background: white;
       }
 
-  }
+    }
+}
 
 
 .button-group{

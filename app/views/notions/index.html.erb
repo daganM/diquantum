@@ -1,12 +1,21 @@
 <% content_for :title, "Liste des 100 notions" %>
 
 <div class="notions">
-<h1>Notions</h1>
-    <div class="row center-block">
-      <% @notions.each do |notion| %>
-        <div class="col-sm-3 col-xs-12 center-block"><%= link_to notion.title, notion, :class => "col-xs-6 col-sm-12 center-block" %></div>
+  <div class="row">
+    <h1 class="col-xs-10">Notions</h1>
+    <a href="#" class="col-xs-1"id="toggler"><%= image_tag("arrow.png", :alt => "fleche") %></a>
+  </div>
+  <div class="row center-block">
+    <% @notions.each do |notion| %>
+      <% if notion.id == 9 %>
+        <div id="toggle">
       <% end %>
-    </div>
-    <p id="notice"><%= notice %></p>
-    <%= link_to 'New Notion', new_notion_path %>
+      <div class="col-sm-3 col-xs-12 center-block"><%= link_to notion.title, notion, :class => "col-xs-6 col-sm-12 center-block" %></div>
+      <% if notion.id == @notions.last.id %>
+        </div>
+      <% end %>
+    <% end %>
+  <% # link_to 'New Notion', new_notion_path %>
+  </div>
+  <p id="notice"><%= notice %></p>
 </div>
