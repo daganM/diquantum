@@ -15,6 +15,16 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+a{
+  text-decoration: none;
+  color: #1812d6;
+  &:hover{
+    color: #1812d6;
+  }
+  &.active {
+    color: #1812d6;
+  }
+}
 body{
   background-color: #f0f0f0;
   font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
@@ -56,6 +66,7 @@ body{
             height: 45px;
             margin-top: 25px;
           }
+        }
       }
       .notions, #filters{
         //height: 120px;
@@ -94,6 +105,12 @@ body{
               &.active {
                 color: white;
                 background: #1812d6;
+              }
+              &#toggler{
+                border : none;
+                &:hover{
+                  background : none;
+                }
               }
             }
 
@@ -169,7 +186,6 @@ body{
           background: white;
         }
       }
-    }
     footer{
       .coucou{
         margin-top: 5%;
@@ -180,18 +196,7 @@ body{
 
         background: white;
       }
-
     }
-}
-a{
-  text-decoration: none;
-  color: #1812d6;
-  &:hover{
-    color: #1812d6;
-  }
-  &.active {
-    color: #1812d6;
-  }
 }
 
 .button-group{
