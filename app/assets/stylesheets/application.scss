@@ -28,6 +28,13 @@ a{
 body{
   background-color: #f0f0f0;
   font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
+  canvas{
+    z-index: -1;
+    position: fixed;
+  }
+  #content{
+    position: absolute;
+  }
   .nav-perso{
       background-color: white;
       margin-bottom: 30px;

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap-sprockets
+//= require particles.min
 
 // On attend que la page soit chargée
 jQuery(document).ready(function()
