@@ -10,6 +10,13 @@
 <p>
   <%= @article.content.html_safe %>
 </p>
+<% if account_signed_in? %>
+  <% if @stared == false %>
+    <p><%= link_to 'Ajouter aux favoris', article_fav_path %></p>
+  <% else %>
+  <p><%= link_to 'Retirer des favoris', article_fav_path %></p>
+  <% end %>
+<% end %>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

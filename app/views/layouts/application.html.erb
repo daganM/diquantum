@@ -50,7 +50,7 @@
     <div class="col-sm-2 col-xs-12 profile center-block">
       <div class="cont">
         <% if account_signed_in? %>
-        <%= image_tag("dagan.jpg", :alt => "Dagan") %>
+        <%= image_tag(avatar_url(current_account), :alt => "Dagan") %>
           <ul>
             <li><a href="#">Profil</a></li>
             <li><a href="#">Forum</a></li>

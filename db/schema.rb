@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125144951) do
+ActiveRecord::Schema.define(version: 20170126093433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(version: 20170125144951) do
 
   add_index "accounts", ["email"], name: "index_accounts_on_email", unique: true, using: :btree
   add_index "accounts", ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true, using: :btree
+
+  create_table "accounts_articles", force: :cascade do |t|
+    t.integer "account_id"
+    t.integer "article_id"
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -85,6 +90,8 @@ ActiveRecord::Schema.define(version: 20170125144951) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "accounts_articles", "accounts"
+  add_foreign_key "accounts_articles", "articles"
   add_foreign_key "articles_notions", "articles"
   add_foreign_key "articles_notions", "notions"
 end
