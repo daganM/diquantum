@@ -6,19 +6,27 @@
   <%= @notion.introduction %>
 </p>
 <h2>Articles</h2>
-<div id="filters">
-  <p>Filtrer :</p>
+<div id="filters" >
+  <p class="col-xs-10">Filtrer :</p>
+  <a href="#" class="col-xs-1"id="toggler"><%= image_tag("arrow.png", :alt => "fleche") %></a>
 
-  <div class="filters">
+  <div class="filters row center-block">
     <% @notions.each do |notion| %>
+      <% if notion.id == @filterLimit %>
+        <div id="toggle">
+      <% end %>
       <% if @notionIds.include?(notion.id) == false %>
-        <% if notion.id != @id %>
-          <a class="button" data-filter="<%= notion %>" href="?notions=<%= @array.join(",") %>&amp;entrance=<%= notion %>"><%= notion %></a>
+        <% if notion.id.to_i != @id.to_i %>
+
+          <div class="col-sm-3 col-xs-12 center-block"><a data-filter="<%= notion %>" href="?notions=<%= @array.join(",") %>&amp;entrance=<%= notion %>"><%= notion %></a></div>
         <% end %>
       <% else %>
-        <% if notion.id != @id %>
-          <a class="button" data-filter="<%= notion %>" href="?notions=<%= @array.join(",") %>&amp;out=<%= notion %>"><%= notion %></a>
+        <% if notion.id.to_i != @id.to_i %>
+          <div class="col-sm-3 col-xs-12 center-block"><a class="active" data-filter="<%= notion %>" href="?notions=<%= @array.join(",") %>&amp;out=<%= notion %>"><%= notion %></a></div>
         <% end %>
+      <% end %>
+      <% if notion.id == @notions.last.id %>
+        </div>
       <% end %>
     <% end %>
   </div>
@@ -27,9 +35,7 @@
   <% @articlesFinals.each do |article| %>
     <article class="filter-element <% article.notions.each do |notion| %><%= notion %> <% end %>">
       <h3><%= link_to article.title, article_path(article) %></h3>
-      <%= article.content %>
+      <%=  truncate_html(article.content, :length => 600) %>
     </article>
   <% end %>
 </div>
-<%= link_to 'Edit', edit_notion_path(@notion) %> |
-<%= link_to 'Back', notions_path %>

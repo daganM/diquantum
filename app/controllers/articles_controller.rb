@@ -10,6 +10,15 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    id = params[:id]
+    if account_signed_in?
+      article = Article.find(id)
+      if current_account.articles.include?(article)
+        @stared = true
+      else
+        @stared = false
+      end
+    end
   end
 
   # GET /articles/new
@@ -73,6 +82,24 @@ class ArticlesController < ApplicationController
     end
   end
 
+def fav
+  id = params[:id]
+  article = Article.find(id)
+  if account_signed_in?
+    account = current_account
+    if account.articles.include?(article)
+      logger.debug "#{account.articles} - #{article} : #{account.articles.include?(article)}"
+      account.articles.delete(article)
+    else
+      account.articles << article
+    end
+  end
+  respond_to do |format|
+    format.html { redirect_to article, notice: 'Vos favoris ont bien été modifiés' }
+    format.json { head :no_content }
+  end
+
+end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article

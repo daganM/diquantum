@@ -11,6 +11,11 @@ class NotionsController < ApplicationController
   # GET /notions/1.json
   def show
     @id = params[:id]
+    if @id == 9
+      @filterLimit = 10
+    else
+      @filterLimit = 9
+    end
     if params[:notions].nil? || params[:notions].empty?
       @array = []
     else
