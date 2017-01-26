@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'articles/:id/fav' => 'articles#fav', as: :article_fav
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-  get 'accounts/:id' => 'accounts#show'
+  get 'accounts/:id' => 'accounts#show', as: :account
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

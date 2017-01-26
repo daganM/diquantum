@@ -50,12 +50,9 @@
     <div class="col-sm-2 col-xs-12 profile center-block">
       <div class="cont">
         <% if account_signed_in? %>
-        <%= image_tag(avatar_url(current_account), :alt => "Dagan") %>
+        <%= image_tag(avatar_url(current_account), :alt => "Dagan", :class => "img-responsive") %>
           <ul>
-            <li><a href="#">Profil</a></li>
-            <li><a href="#">Forum</a></li>
-            <li><a href="#">Mes Favoris</a></li>
-            <li><a href="#">Paramètres</a></li>
+            <li><%= link_to 'Mon profil', account_path(current_account.id) %></li>
             <li><%= link_to "Me déconnecter", destroy_account_session_path, method: :delete %></li>
           <ul>
         <% else %>
@@ -67,6 +64,7 @@
         <% end %>
         </div>
       </div>
+      <div style="clear: both"></div>
     </section>
     <footer>
       <div class="coucou"></div>

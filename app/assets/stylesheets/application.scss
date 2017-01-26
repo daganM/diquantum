@@ -47,8 +47,17 @@ body{
 
   section.container{
     margin-top : 70px;
-      .notions, #filters{
+      #principal{
         background-color: white;
+      }
+      .row{
+        .starDiv{
+          .star{
+            height: 45px;
+            margin-top: 25px;
+          }
+      }
+      .notions, #filters{
         //height: 120px;
         h1{
           margin-top: 0px;
@@ -69,7 +78,7 @@ body{
         }
 
         .row{
-
+          }
           div{
             text-transform: capitalize;
 
@@ -126,12 +135,11 @@ body{
         position: fixed;
         right:0;
         left: 58%;
+        z-index: 190;
         .cont{
           text-align: center;
           img {
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
             display: block;
             margin: auto;
             margin-top: 20px;
@@ -175,13 +183,33 @@ body{
 
     }
 }
-
+a{
+  text-decoration: none;
+  color: #1812d6;
+  &:hover{
+    color: #1812d6;
+  }
+  &.active {
+    color: #1812d6;
+  }
+}
 
 .button-group{
   display: inline;
 }
 @media (max-width: 768px) {
- section .notions .row div{
-   left: 25%;
+  body{
+    section.container
+    {
+      .notions .row div{
+        left: 25%;
+       }
+       .profile{
+         margin-top: 25px;
+         position: static;
+         left : auto;
+       }
+    }
+
   }
  }
