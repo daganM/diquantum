@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <div class="center-block" style="text-align: center;">
+    <%= image_tag avatar_url(@account), :class => "img-responsive", :alt => "" %>
+    <%= @account.email if @account %>
+  </div>
+  <strong>Mes favoris : </strong>
+  <% @account.articles.each do |article| %>
+  <%= link_to article.title, article %>
+  <% end %>
+</p>

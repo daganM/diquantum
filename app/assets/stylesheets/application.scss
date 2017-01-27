@@ -15,9 +15,23 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+a{
+  text-decoration: none;
+  color: #1812d6;
+  &:hover{
+    color: #1812d6;
+  }
+  &.active {
+    color: #1812d6;
+  }
+}
 body{
   background-color: #f0f0f0;
   font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
+  canvas{
+    z-index: -1;
+    position: fixed;
+  }
   .nav-perso{
       background-color: white;
       margin-bottom: 30px;
@@ -46,8 +60,19 @@ body{
       }
 
   section.container{
-      .notions, #filters{
+    margin-top : 70px;
+      #principal{
         background-color: white;
+      }
+      .row{
+        .starDiv{
+          .star{
+            height: 45px;
+            margin-top: 25px;
+          }
+        }
+      }
+      .notions, #filters{
         //height: 120px;
         h1{
           margin-top: 0px;
@@ -68,7 +93,7 @@ body{
         }
 
         .row{
-
+          }
           div{
             text-transform: capitalize;
 
@@ -84,6 +109,12 @@ body{
               &.active {
                 color: white;
                 background: #1812d6;
+              }
+              &#toggler{
+                border : none;
+                &:hover{
+                  background : none;
+                }
               }
             }
 
@@ -125,12 +156,11 @@ body{
         position: fixed;
         right:0;
         left: 58%;
+        z-index: 190;
         .cont{
           text-align: center;
           img {
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
             display: block;
             margin: auto;
             margin-top: 20px;
@@ -160,7 +190,6 @@ body{
           background: white;
         }
       }
-    }
     footer{
       .coucou{
         margin-top: 5%;
@@ -171,16 +200,25 @@ body{
 
         background: white;
       }
-
     }
 }
-
 
 .button-group{
   display: inline;
 }
 @media (max-width: 768px) {
- section .notions .row div{
-   left: 25%;
+  body{
+    section.container
+    {
+      .notions .row div{
+        left: 25%;
+       }
+       .profile{
+         margin-top: 25px;
+         position: static;
+         left : auto;
+       }
+    }
+
   }
  }
