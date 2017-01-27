@@ -39,9 +39,9 @@ class ArticlesController < ApplicationController
     notions = params[:notions]
     notionsObj = []
     notions.each do |notion|
+    @article = Article.new(article_params)
       @article.notions << Notion.find(notion)
     end
-    @article = Article.new(article_params)
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
