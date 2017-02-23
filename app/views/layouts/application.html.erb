@@ -29,7 +29,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse collapse-perso" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#">A Propos</a></li>
+            <li><a href="#"><%= t('about') %></a></li>
             <li><a href="#">Notions</a></li>
           </ul>
           <form class="navbar-form navbar-left" style="display: none;">
@@ -54,14 +54,16 @@
           <% if account_signed_in? %>
           <%= image_tag(avatar_url(current_account), :alt => "Dagan", :class => "img-responsive") %>
             <ul>
-              <li><%= link_to 'Mon profil', account_path(current_account.id) %></li>
-              <li><%= link_to "Me déconnecter", destroy_account_session_path, method: :delete %></li>
+
+              <li><%= link_to t('profile'), account_path(current_account.id) %></li>
+              <li><%= link_to t('logout'), destroy_account_session_path, method: :delete %></li>
             <ul>
           <% else %>
           <%= image_tag("pp.png", :alt => "Profile Picture") %>
             <ul>
-              <li><%= link_to "M'inscrire", new_account_registration_path %></li>
-              <li><%= link_to "Me connecter", new_account_session_path %></li>
+              <li><%= t('signup', :href => new_account_registration_path) %></li>
+              <li><%= link_to 'signup', new_account_registration_path %></li>
+              <li><%= link_to t('login'), new_account_session_path %></li>
             <ul>
           <% end %>
           </div>

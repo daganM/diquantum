@@ -1,19 +1,27 @@
 Rails.application.routes.draw do
-  devise_for :accounts
+
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+  scope "(:locale)", :locale => /fr|en/ do
+    root :to => 'notions#index'
+    devise_for :accounts
+    get 'articles/:id/fav' => 'articles#fav', as: :article_fav
+    get 'account/:id' => 'accounts#show', as: :account
+    resources :articles
+    resources :introductions
+    resources :notions
+  end
   resources :articles
   resources :introductions
   resources :notions
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   mount Ckeditor::Engine => '/ckeditor'
-  root :to => 'notions#index'
-  get 'articles/:id/fav' => 'articles#fav', as: :article_fav
+  # root :to => 'notions#index'
+  # get 'articles/:id/fav' => 'articles#fav', as: :article_fav
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-  get 'account/:id' => 'accounts#show', as: :account
+  # get 'account/:id' => 'accounts#show', as: :account
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

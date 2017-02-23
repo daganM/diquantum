@@ -19,11 +19,11 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+fr:
   hello: "Hello world"
-  filter : "Filter"
-  about: "About"
-  signup: "Sign up"
-  login: "Log in"
-  profile: "My profil"
-  logout: "Log out"
+  filter: "Filtrer"
+  about: "A propos"
+  signup: "M'inscrire"
+  login: "Me connecter"
+  profile: "Mon profil"
+  logout: "Me déconnecter"
