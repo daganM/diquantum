@@ -16,6 +16,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :language %><br>
+    <%= f.select :language_id, options_for_select(@languages.collect{ |l| [l.int_title, l.id] }) %>
+  </div>
+  <div class="field">
     <% @notions.each do |notion| %>
       <%= check_box_tag "notions[]", notion.id %><%= notion %>
     <% end %>

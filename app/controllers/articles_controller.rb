@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/new
   def new
+    @languages = Language.all
     @article = Article.new
     @notions = Notion.all
   end
@@ -38,6 +39,7 @@ class ArticlesController < ApplicationController
     # notions = params[:notions]
     notions = params[:notions]
     notionsObj = []
+
     notions.each do |notion|
     @article = Article.new(article_params)
       @article.notions << Notion.find(notion)
@@ -58,6 +60,7 @@ class ArticlesController < ApplicationController
   def update
     notions = params[:notions]
     notionsObj = []
+    @article.notions.clear
     notions.each do |notion|
       @article.notions << Notion.find(notion)
     end
