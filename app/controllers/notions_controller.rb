@@ -73,7 +73,7 @@ class NotionsController < ApplicationController
         @articlesFinals << article
       end
     end
-
+    
 
   end
 

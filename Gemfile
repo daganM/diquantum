@@ -1,8 +1,9 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7.1'
+gem 'rails', '5.0.2'
+gem 'rake', '>= 12.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
@@ -34,6 +35,7 @@ gem 'truncate_html', '~> 0.9.3'
 # gem 'unicorn'
 gem 'seed_dump'
 gem 'ckeditor'
+gem 'tire'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -47,5 +49,8 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
+group :production do
+  gem 'puma'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
