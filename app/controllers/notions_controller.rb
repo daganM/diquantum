@@ -10,6 +10,7 @@ class NotionsController < ApplicationController
   # GET /notions/1
   # GET /notions/1.json
   def show
+    language = Language.where(:code => I18n.locale).limit(1).first
     @id = params[:id]
     if @id == 9
       @filterLimit = 10
@@ -44,7 +45,7 @@ class NotionsController < ApplicationController
         end
       end
     end
-    @articles = Article.all
+    @articles = Article.where(:language_id => language.id)
     @articlesFinals = []
     @articles.each do |article|
       notions = article.notions

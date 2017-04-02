@@ -10,7 +10,7 @@
       <% if notion.id == 9 %>
         <div id="toggle">
       <% end %>
-      <div class="col-sm-3 col-xs-12 center-block"><%= link_to notion.title, notion, :class => "col-xs-6 col-sm-12 center-block" %></div>
+      <div class="col-sm-3 col-xs-12 center-block"><%= link_to notion.title, notion_path(id: notion.id), :class => "col-xs-6 col-sm-12 center-block" %></div>
       <% if notion.id == @notions.last.id %>
         </div>
       <% end %>

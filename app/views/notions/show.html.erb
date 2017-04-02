@@ -34,7 +34,7 @@
 <div class="grid">
   <% @articlesFinals.each do |article| %>
     <article class="filter-element <% article.notions.each do |notion| %><%= notion %> <% end %>">
-      <h3><%= link_to article.title, article_path(article) %></h3>
+      <h3><%= link_to article.title, article_path(id: article) %></h3>
       <%=  truncate_html(article.content, :length => 600) %>
     </article>
   <% end %>

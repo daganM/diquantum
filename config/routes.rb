@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   scope "(:locale)", :locale => /fr|en/ do
+    resources :languages
     root :to => 'notions#index'
     devise_for :accounts
     get 'articles/:id/fav' => 'articles#fav', as: :article_fav
@@ -12,9 +13,9 @@ Rails.application.routes.draw do
     resources :introductions
     resources :notions
   end
-  resources :articles
-  resources :introductions
-  resources :notions
+  # resources :articles
+  # resources :introductions
+  # resources :notions
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   mount Ckeditor::Engine => '/ckeditor'

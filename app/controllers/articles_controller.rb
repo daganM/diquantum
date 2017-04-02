@@ -31,6 +31,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @notions = Notion.all
+    @article = Article.find(params[:id])
+    @languages = Language.all
   end
 
   # POST /articles
