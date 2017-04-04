@@ -11,13 +11,29 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     id = params[:id]
+    article = Article.find(id)
     if account_signed_in?
-      article = Article.find(id)
       if current_account.articles.include?(article)
         @stared = true
       else
         @stared = false
       end
+    end
+    @textArray = article.content.split(" ")
+    @content = ""
+    @textArray.each do |t|
+      word = "a&eacute;rien"
+      #word = CGI::escapeHTML(word)
+      word = /#{word}(\W*)/
+      logger.debug(word)
+      if word.match(t)
+
+        t = "<a href='indef_numerique/1'>" << t << "</a> "
+      else
+
+        t = t << " "
+      end
+      @content << t
     end
   end
 
