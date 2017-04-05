@@ -5,6 +5,27 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale
 
+  def buildRegex(words) #E: Array S:Regexp as /word1(\W*))|(word2(\W*))/
+    regex = nil
+    words.each do |w|
+      if regex == nil
+        if words.last == w
+          regex = "#{w}(\\W*)"
+        else
+          regex = "#{w}(\\W*)"
+        end
+      else
+        if words.last == w
+          regex << "|#{w}(\\W*)"
+        else
+          regex << "|#{w}(\\W*)"
+        end
+      end
+    end
+    regex = Regexp.new regex
+    return regex
+  end
+
   private
     def set_locale
       I18n.locale = params[:locale] || I18n.default_locale

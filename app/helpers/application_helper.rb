@@ -4,4 +4,5 @@ module ApplicationHelper
     gravatar_id = Digest::MD5.hexdigest(account.email.downcase)
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=128&d=#{CGI.escape(default_url)}"
   end
+
 end

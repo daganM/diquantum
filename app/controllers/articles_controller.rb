@@ -22,15 +22,14 @@ class ArticlesController < ApplicationController
     @textArray = article.content.split(" ")
     @content = ""
     @textArray.each do |t|
-      word = "a&eacute;rien"
-      #word = CGI::escapeHTML(word)
-      word = /#{word}(\W*)/
-      logger.debug(word)
-      if word.match(t)
-
+      word1 = "a&eacute;rien"
+      word2 = "num&eacute;rique"
+      word3 = "passager"
+      words = [word1, word2, word3]
+      regex = buildRegex(words)
+      if regex.match(t)
         t = "<a href='indef_numerique/1'>" << t << "</a> "
       else
-
         t = t << " "
       end
       @content << t
