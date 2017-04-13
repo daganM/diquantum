@@ -25,7 +25,51 @@ class ApplicationController < ActionController::Base
     regex = Regexp.new regex
     return regex
   end
+  def decrypter(t)
+  		if t.nil? or t == "" #si il n'y a pas de texte
+  			return t
+  		else #on décrypte
 
+  			#espaces et sauts de lignes
+  			t.gsub!(/\n/, "<br />")
+
+  			#emphases
+  			t.gsub!(/<[\s]*i[\s]*>(.+?)<[\s]*\/[\s]*i[\s]*>/im, "<em>\\1</em>")
+  			t.gsub!(/<[\s]*g[\s]*>(.+?)<[\s]*\/[\s]*g[\s]*>/im, "<strong>\\1</strong>")
+  			t.gsub!(/<[\s]*s[\s]*>(.+?)<[\s]*\/[\s]*s[\s]*>/im, "<ins>\\1</ins>")
+  			t.gsub!(/<[\s]*b[\s]*>(.+?)<[\s]*\/[\s]*b[\s]*>/im, "<del>\\1</del>")
+
+  			#semantique
+  			t.gsub!(/<[\s]*titre[\s]*>(.+?)<[\s]*\/[\s]*titre[\s]*>[[\s]*<br \/>]*/im, "<h3>\\1</h3>")
+  			t.gsub!(/<[\s]*sous-titre[\s]*>(.+?)<[\s]*\/[\s]*sous-titre[\s]*>[[\s]*<br \/>]*/im, "<h4>\\1</h4>")
+
+  			#listes
+  			t.gsub!(/[<br \/>]*<[\s]*liste[\s]*>(.+?)<[\s]*\/[\s]*liste[\s]*>/im, "<ul>\\1</ul>")
+  			t.gsub!(/[<br \/>]*<[\s]*-[\s]*>(.+?)<[\s]*\/[\s]*-[\s]*>/im, "<li>\\1</li>")
+
+  			#acronymes
+  			t.gsub!(/<[\s]*sigle[\s]*=[\s]*(.+?)[\s]*>(.+?)<[\s]*\/[\s]*sigle[\s]*>/im, "<acronym title=\"\\1\">\\2</acronym>")
+
+  			#liens
+  			t.gsub!(/<[\s]*lien[\s]*=[\s]*(.+?)[\s]*>(.+?)<[\s]*\/[\s]*lien[\s]*>/im, "<a href=\"\\1\">\\2</a>")
+
+  			#accents
+  			accents = {
+  			"à"=>"&agrave;", "â"=>"&acirc;",
+  			"é"=>"&eacute;", "è"=>"&egrave;", "ê"=>"&ecirc;", "ë"=>"&euml;",
+  			"î"=>"&icirc;", "ï"=>"&iuml;",
+  			"ô"=>"&ocirc;", "ö"=>"&ouml;",
+  			"ù"=>"&ugrave;", "û"=>"&ucirc;",
+  			"ç"=>"&ccedil;"
+  			}
+  			accents.each do |k, v|
+  				t.gsub!(/#{k}/, v)
+  			end
+
+  		end
+
+  		return t
+  	end
   private
     def set_locale
       I18n.locale = params[:locale] || I18n.default_locale

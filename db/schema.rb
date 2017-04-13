@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170312163104) do
+ActiveRecord::Schema.define(version: 20170413160637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,12 @@ ActiveRecord::Schema.define(version: 20170312163104) do
   create_table "articles_notions", force: :cascade do |t|
     t.integer "notion_id"
     t.integer "article_id"
+  end
+
+  create_table "indefinitions", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "introductions", force: :cascade do |t|

@@ -1,3 +1,4 @@
+require 'CGI'
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
@@ -22,11 +23,14 @@ class ArticlesController < ApplicationController
     @textArray = article.content.split(" ")
     @content = ""
     @textArray.each do |t|
-      word1 = "a&eacute;rien"
-      word2 = "num&eacute;rique"
-      word3 = "passager"
-      words = [word1, word2, word3]
-      regex = buildRegex(words)
+      indefs = Indefinition.all
+      indefsTitles = []
+      indefsIds = []
+      indefs.each do |i|
+        indefsTitles << decrypter(i.title)
+        indefsIds << i.id
+      end
+      regex = buildRegex(indefsTitles)
       if regex.match(t)
         t = "<a href='indef_numerique/1'>" << t << "</a> "
       else

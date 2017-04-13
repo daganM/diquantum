@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   scope "(:locale)", :locale => /fr|en/ do
-    resources :languages
     root :to => 'notions#index'
+    resources :languages
+    resources :indefinitions
     devise_for :accounts
     get 'articles/:id/fav' => 'articles#fav', as: :article_fav
     get 'account/:id' => 'accounts#show', as: :account
