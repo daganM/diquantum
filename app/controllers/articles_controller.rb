@@ -31,11 +31,18 @@ class ArticlesController < ApplicationController
         indefsIds << i.id
       end
       regex = buildRegex(indefsTitles)
-      if regex.match(t)
-        t = "<a href='indef_numerique/1'>" << t << "</a> "
+      regexTab = buildRegexArray(indefsTitles)
+      match = matchtest(regexTab, t)
+      if match != nil
+        t = "<a href='indef_numerique/#{indefsIds[match]}'>" << t << "</a> "
       else
         t = t << " "
       end
+      # if regex.match(t)
+      #
+      # else
+      #
+      # end
       @content << t
     end
   end

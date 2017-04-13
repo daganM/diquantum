@@ -25,6 +25,28 @@ class ApplicationController < ActionController::Base
     regex = Regexp.new regex
     return regex
   end
+
+  def buildRegexArray(words)
+    regex = []
+    words.each do |w|
+      regex << /#{w}(\W*)/
+    end
+    return regex
+  end
+
+  def matchtest(regexTab, t)
+    regexTab.each do |r|
+      if r.match(t)
+        logger.debug(regexTab.find_index(r))
+        return regexTab.find_index(r)
+
+      end
+    end
+    return nil
+  end
+
+
+
   def decrypter(t)
   		if t.nil? or t == "" #si il n'y a pas de texte
   			return t
