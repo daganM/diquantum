@@ -21,14 +21,15 @@ class ArticlesController < ApplicationController
     end
     @textArray = article.content.split(" ")
     @content = ""
+    indefs = Indefinition.all
+    indefsTitles = []
+    indefsIds = []
+    indefs.each do |i|
+      indefsTitles << decrypter(i.title)
+      indefsIds << i.id
+    end
     @textArray.each do |t|
-      indefs = Indefinition.all
-      indefsTitles = []
-      indefsIds = []
-      indefs.each do |i|
-        indefsTitles << decrypter(i.title)
-        indefsIds << i.id
-      end
+
       regex = buildRegex(indefsTitles)
       regexTab = buildRegexArray(indefsTitles)
       match = matchtest(regexTab, t)
@@ -125,7 +126,7 @@ def fav
     end
   end
   respond_to do |format|
-    format.html { redirect_to article, notice: 'Vos favoris ont bien été modifiés' }
+    format.html { redirect_to article_path(id: article), notice: 'Vos favoris ont bien été modifiés' }
     format.json { head :no_content }
   end
 

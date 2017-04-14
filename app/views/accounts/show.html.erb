@@ -7,6 +7,6 @@
   </div>
   <strong><%= t('fav') %></strong>
   <% @account.articles.each do |article| %>
-  <%= link_to article.title, article %>
+  <%= link_to article.title, article_path(id: article) %>
   <% end %>
 </p>
