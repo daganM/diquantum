@@ -67,9 +67,9 @@ class ArticlesController < ApplicationController
     # notions = params[:notions]
     notions = params[:notions]
     notionsObj = []
-
-    notions.each do |notion|
     @article = Article.new(article_params)
+    notions.each do |notion|
+
       @article.notions << Notion.find(notion)
     end
     respond_to do |format|
