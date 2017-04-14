@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :languages
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  scope "(:locale)", :locale => /fr|en/ do
+  scope "(:locale)", :locale => /fr|en|es|it/ do
     root :to => 'notions#index'
     resources :languages
     resources :indefinitions

@@ -19,15 +19,14 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-fr:
-  hello: "Hello world"
-  filter: "Filtrer"
-  about: "A propos"
-  signup: "M'inscrire"
-  login: "Me connecter"
-  profile: "Mon profil"
-  logout: "Me déconnecter"
-  notions: "Notions"
-  actus: "Actualités"
-  articles: "Articles"
-  
+it:
+  # hello: "Hello world"
+  filter: "Filtrare"
+  about: "A proposito"
+  signup: "Registrarsi"
+  login: "Accedere"
+  profile: "Il mio profilo"
+  logout: "Disconnettersi"
+  notions: "Concetti"
+  actus: "Notizie"
+  articles: "Articoli"

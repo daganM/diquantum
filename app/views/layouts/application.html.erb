@@ -30,7 +30,7 @@
         <div class="collapse navbar-collapse collapse-perso" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="#"><%= t('about') %></a></li>
-            <li><a href="#">Notions</a></li>
+            <li><a href="#"><%= t('notions') %></a></li>
           </ul>
           <form class="navbar-form navbar-left" style="display: none;">
             <div class="form-group">
@@ -39,8 +39,10 @@
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
           <ul class="nav navbar-nav navbar-right ">
-            <li><a href="#"><%= image_tag("facebook.png", :alt => "facebook") %></a></li>
-            <li><a href="#"><%= image_tag("twitter.png", :alt => "twitter") %></a></li>
+            <li><a href="/fr">FR</a></li>
+            <li><a href="/en">EN</a></li>
+            <li><a href="/es">ES</a></li>
+            <li><a href="/it">IT</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -62,7 +64,7 @@
           <%= image_tag("pp.png", :alt => "Profile Picture") %>
             <ul>
               <li><%= t('signup', :href => new_account_registration_path) %></li>
-              <li><%= link_to 'signup', new_account_registration_path %></li>
+              <li><%= link_to t('signup'), new_account_registration_path %></li>
               <li><%= link_to t('login'), new_account_session_path %></li>
             <ul>
           <% end %>
