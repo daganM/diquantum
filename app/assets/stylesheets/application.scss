@@ -17,7 +17,7 @@
 @import "bootstrap";
 a{
   text-decoration: none;
-  color: #1812d6;
+  color: #004E5B;
   &:hover{
     color: #1812d6;
   }
@@ -25,9 +25,24 @@ a{
     color: #1812d6;
   }
 }
+.boutons {
+  color:#004E5B;
+  border-color:#004E5B; 
+  background-color: #FFF;
+  text-transform:uppercase;
+  font-size:14px;
+  float: center;
+  margin:auto;
+  &:hover {
+    color:#FFD700;
+    border-color: #FFD700;
+    background-color: #FFF;
+    text-transform: uppercase;
+  }
+}
 body{
   background-color: #f0f0f0;
-  font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
+  font-family: "Open Sans", Helvetica,Arial,sans-serif;
   canvas{
     z-index: -1;
     position: fixed;
