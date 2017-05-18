@@ -25,14 +25,20 @@ a{
     color: #1812d6;
   }
 }
+.centrerboutons{
+  display: inline-block;
+  text-align: center;
+}
 .boutons {
   color:#004E5B;
   border-color:#004E5B; 
   background-color: #FFF;
   text-transform:uppercase;
-  font-size:14px;
-  float: center;
-  margin:auto;
+  font-size:12px;
+  display: inline-block;
+  padding: 7px;
+  font-weight: bold;
+
   &:hover {
     color:#FFD700;
     border-color: #FFD700;

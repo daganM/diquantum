@@ -7,7 +7,8 @@
 # for your user class - change it here.
 Thredded.user_class = 'Account'
 
-# User name column, used in @mention syntax and *must* be unique.
+# User name column, used in @mention syntax and should be unique.
+>>>>>>> 042eab48e245f31f262608c27470d813d25480e0
 # This is the column used to search for users' names if/when someone is @ mentioned.
 Thredded.user_name_column = :name
 
@@ -19,11 +20,14 @@ Thredded.user_name_column = :name
 # When linking to a user, Thredded will use this lambda to spit out
 # the path or url to your user. This lambda is evaluated in the view context.
 Thredded.user_path = lambda do |user|
+<<<<<<< HEAD
   user_path = :"#{Thredded.user_class_name.underscore}_path"
+=======
   main_app.respond_to?(user_path) ? main_app.send(user_path, user) : "/users/#{user.to_param}"
 end
 
 # This method is used by Thredded controllers and views to fetch the currently signed-in user
+<<<<<<< HEAD
 Thredded.current_user_method = :"current_#{Thredded.user_class_name.underscore}"
 
 # User avatar URL. rb-gravatar gem is used by default:
@@ -68,9 +72,12 @@ Thredded.messageboards_order = :position
 
 # Emails going out will prefix the "Subject:" with the following string
 # Thredded.email_outgoing_prefix = '[My Forum] '
+<<<<<<< HEAD
 #
 # The parent mailer for all Thredded mailers
 # Thredded.parent_mailer = 'ActionMailer::Base'
+=======
+>>>>>>> 042eab48e245f31f262608c27470d813d25480e0
 
 # ==> View Configuration
 # Set the layout for rendering the thredded views.
@@ -85,6 +92,8 @@ Thredded.layout = 'thredded/application'
 # If your forum is in a language other than English, you might want to use the babosa gem instead
 # Thredded.slugifier = ->(input) { Babosa::Identifier.new(input).normalize.transliterate(:russian).to_s }
 
+=======
+>>>>>>> 042eab48e245f31f262608c27470d813d25480e0
 # ==> Post Content Formatting
 # Customize the way Thredded handles post formatting.
 

@@ -34,6 +34,7 @@ gem 'truncate_html', '~> 0.9.3'
 # gem 'unicorn'
 gem 'seed_dump'
 gem 'ckeditor'
+<<<<<<< HEAD
 gem 'tire'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   mount Ckeditor::Engine => '/ckeditor'
+  mount Thredded::Engine => '/forum'
   # root :to => 'notions#index'
   # get 'articles/:id/fav' => 'articles#fav', as: :article_fav
   # Example of regular route:
